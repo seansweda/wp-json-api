@@ -87,6 +87,12 @@ class JSON_API_Response {
         echo '<pre>';
       }
       echo $this->prettify($json);
+    // use error status for HTTP status
+    } else if ($status != 'ok' && $status !='error') {
+      if (!headers_sent()) {
+        header("HTTP/1.1 $status");
+      }
+      //echo $this->prettify($json);
     } else if (!empty($_REQUEST[$status_redirect])) {
       wp_redirect($_REQUEST[$status_redirect]);
     } else if ($json_api->query->redirect) {
