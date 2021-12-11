@@ -3,9 +3,10 @@
 Plugin Name: JSON API
 Plugin URI: http://wordpress.org/plugins/json-api/
 Description: A RESTful API for WordPress
-Version: 1.1.1
+Version: 1.1.3
 Author: Dan Phiffer
 Author URI: http://phiffer.org/
+Update URI: https://github.com/seansweda/wp-json-api
 */
 
 $dir = json_api_dir();
