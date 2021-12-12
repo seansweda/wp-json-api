@@ -26,7 +26,7 @@ class JSON_API_Query {
     if ($wp_query_var) {
       return $wp_query_var;
     } else if ($query_var) {
-      return $this->strip_magic_quotes($query_var);
+      return $query_var;
     } else if (isset($this->defaults[$key])) {
       return $this->defaults[$key];
     } else {
@@ -83,14 +83,6 @@ class JSON_API_Query {
       return get_query_var($wp_translation[$key]);
     } else {
       return null;
-    }
-  }
-  
-  function strip_magic_quotes($value) {
-    if (get_magic_quotes_gpc()) {
-      return stripslashes($value);
-    } else {
-      return $value;
     }
   }
   
